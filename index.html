@@ -10,7 +10,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
 
-    /* Header */
+    /* HEADER */
     .header {
         background: #1a1a1a; color: white; padding: 1rem 0;
         position: fixed; width: 100%; top: 0; z-index: 1000;
@@ -35,18 +35,19 @@
         transition: color 0.3s ease;
     }
     .nav-menu a:hover { color: #d4af37; }
-
-    /* Hamburger Button */
     .hamburger {
         display: none; font-size: 1.8rem; color: white;
         background: none; border: none; cursor: pointer;
     }
+
     @media (max-width: 768px) {
         .hamburger { display: block; }
         .nav-menu {
             position: absolute; top: 70px; right: 0;
-            background: #1a1a1a; flex-direction: column;
-            width: 200px; gap: 1rem; padding: 1rem;
+            background: #1a1a1a;
+            flex-direction: column;
+            width: 200px; gap: 1rem;
+            padding: 1rem;
             display: none;
         }
         .nav-menu.show {
@@ -59,7 +60,7 @@
         }
     }
 
-    /* Hero Section */
+    /* HERO */
     .hero {
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                     url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2070&q=80');
@@ -80,65 +81,41 @@
     .btn-outline { background: transparent; border: 2px solid #d4af37; color: #d4af37; }
     .btn-outline:hover { background: #d4af37; color: #1a1a1a; }
 
-    /* Sections */
-    .section { padding: 5rem 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .section-title {
-        text-align: center; font-family: 'Playfair Display', serif;
-        font-size: 2.5rem; margin-bottom: 3rem; color: #1a1a1a;
-    }
-
-    /* Services */
+    /* SERVICES */
+    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #d4af37; margin-bottom: 1.5rem; text-align: center; }
     .services-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem; margin-top: 3rem;
-    }
-    .service-card {
-        background: white; padding: 2rem; border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        text-align: center; transition: transform 0.3s ease;
-    }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-icon { font-size: 3rem; color: #d4af37; margin-bottom: 1rem; }
-
-    /* About */
-    .about-section { background: #f8f9fa; }
-    .about-content {
-        display: grid; grid-template-columns: 1fr 1fr;
-        gap: 3rem; align-items: center;
-    }
-    .about-text h3 {
-        font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; color: #1a1a1a;
-    }
-    .stats {
-        display: grid; grid-template-columns: repeat(3, 1fr);
-        gap: 2rem; margin-top: 3rem;
-    }
-    .stat-item { text-align: center; }
-    .stat-number { font-size: 2.5rem; font-weight: 700; color: #d4af37; }
-
-    /* Footer */
-    .footer {
-        background: #1a1a1a; color: white; padding: 3rem 0 1rem;
-    }
-    .footer-content {
         display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem; margin-bottom: 2rem;
+        gap: 2rem;
     }
-    .footer-section h3 { color: #d4af37; margin-bottom: 1rem; }
-    .footer-section a {
-        color: white; text-decoration: none; display: block; margin-bottom: 0.5rem;
+    .service {
+        background: #f8f8f8; padding: 2rem; border-radius: 10px; text-align: center;
+        transition: transform 0.3s ease;
     }
-    .footer-section a:hover { color: #d4af37; }
-    .footer-bottom {
-        text-align: center; padding-top: 2rem; border-top: 1px solid #333;
-    }
+    .service:hover { transform: translateY(-5px); }
+    .service i { font-size: 2rem; color: #d4af37; margin-bottom: 1rem; }
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .hero-content h1 { font-size: 2.2rem; }
-        .about-content { grid-template-columns: 1fr; }
-        .stats { grid-template-columns: 1fr; }
+    /* ABOUT */
+    .about { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
+    .about img { width: 100%; max-width: 500px; border-radius: 10px; }
+    .about-text { flex: 1; }
+
+    /* CONTACT */
+    .contact-form {
+        display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 1rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem;
+    }
+    .contact-form button {
+        padding: 1rem; background: #d4af37; border: none; color: #1a1a1a; font-weight: 600; cursor: pointer;
+        border-radius: 5px; transition: all 0.3s ease;
+    }
+    .contact-form button:hover { background: #b8941f; }
+
+    /* FOOTER */
+    footer {
+        background: #1a1a1a; color: white; text-align: center; padding: 1rem; margin-top: 2rem;
     }
 </style>
 </head>
@@ -159,134 +136,48 @@
     </nav>
 </header>
 
-<section id="home" class="hero">
+<section class="hero">
     <div class="hero-content">
         <h1>Excellence in Legal Services</h1>
-        <p>With over 25 years of experience, we provide comprehensive legal solutions with integrity, dedication, and personalized attention to every client.</p>
+        <p>With over 25 years of experience, we provide comprehensive legal solutions with integrity, dedication, and personalized attention.</p>
         <a href="#contact" class="btn">Free Consultation</a>
         <a href="#services" class="btn btn-outline">Our Services</a>
     </div>
 </section>
 
-<section id="services" class="section">
-    <div class="container">
-        <h2 class="section-title">Our Legal Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-building"></i></div>
-                <h3>Corporate Law</h3>
-                <p>Comprehensive corporate legal services including formation, compliance, mergers & acquisitions, and corporate governance.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-gavel"></i></div>
-                <h3>Civil Litigation</h3>
-                <p>Expert representation in civil disputes, contract disputes, personal injury cases, and complex commercial litigation.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-home"></i></div>
-                <h3>Real Estate Law</h3>
-                <p>Complete real estate legal services including transactions, development, zoning, and property disputes.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-users"></i></div>
-                <h3>Family Law</h3>
-                <p>Compassionate family law services including divorce, child custody, adoption, and family mediation.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
-                <h3>Estate Planning</h3>
-                <p>Comprehensive estate planning including wills, trusts, probate, and asset protection strategies.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Employment Law</h3>
-                <p>Employment law services including workplace discrimination, wrongful termination, and labor disputes.</p>
-            </div>
+<section id="services">
+    <h2>Our Legal Services</h2>
+    <div class="services-grid">
+        <div class="service"><i class="fas fa-gavel"></i><h3>Civil Litigation</h3><p>Expert representation in all civil matters.</p></div>
+        <div class="service"><i class="fas fa-briefcase"></i><h3>Corporate Law</h3><p>Comprehensive legal advice for businesses.</p></div>
+        <div class="service"><i class="fas fa-home"></i><h3>Property Law</h3><p>Handling property disputes and conveyancing.</p></div>
+        <div class="service"><i class="fas fa-user-shield"></i><h3>Criminal Defense</h3><p>Strong defense strategies for all cases.</p></div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1603036767595-8ecbcf5b0d83?auto=format&fit=crop&w=800&q=80" alt="Law Firm Office">
+        <div class="about-text">
+            <p>TT Kgomokaboya Inc Attorneys has been serving clients for over 25 years. Our team of dedicated professionals provides top-notch legal services in various fields, ensuring justice and client satisfaction.</p>
+            <p>We believe in building long-term relationships based on trust, transparency, and exceptional legal expertise.</p>
         </div>
     </div>
 </section>
 
-<section id="about" class="section about-section">
-    <div class="container">
-        <h2 class="section-title">About Our Firm</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Dedicated to Justice Since 1998</h3>
-                <p>Lawson & Associates has been serving clients with integrity and excellence for over 25 years. Our team of experienced attorneys is committed to providing personalized legal solutions tailored to each client's unique needs.</p>
-                <p>We believe in building lasting relationships with our clients based on trust, communication, and results.</p>
-                <div class="stats">
-                    <div class="stat-item"><div class="stat-number">25+</div><div>Years Experience</div></div>
-                    <div class="stat-item"><div class="stat-number">500+</div><div>Cases Won</div></div>
-                    <div class="stat-item"><div class="stat-number">100%</div><div>Client Satisfaction</div></div>
-                </div>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=687&q=80" alt="Law Office" style="width: 100%; border-radius: 10px;">
-            </div>
-        </div>
-    </div>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 </section>
 
-<section id="contact" class="section">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
-            <div>
-                <h3 style="margin-bottom: 1rem; color: #1a1a1a;">Get in Touch</h3>
-                <p style="margin-bottom: 2rem;">Ready to discuss your legal needs? Contact us for a free consultation.</p>
-                <div style="margin-bottom: 1rem;"><i class="fas fa-map-marker-alt" style="color: #d4af37; margin-right: 0.5rem;"></i>123 Legal Street, Suite 100<br>New York, NY 10001</div>
-                <div style="margin-bottom: 1rem;"><i class="fas fa-phone" style="color: #d4af37; margin-right: 0.5rem;"></i>(555) 123-4567</div>
-                <div style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: #d4af37; margin-right: 0.5rem;"></i>info@lawsonassociates.com</div>
-            </div>
-            <div>
-                <form style="display: grid; gap: 1rem;">
-                    <input type="text" placeholder="Your Name" style="padding: 1rem; border: 1px solid #ddd; border-radius: 5px;">
-                    <input type="email" placeholder="Your Email" style="padding: 1rem; border: 1px solid #ddd; border-radius: 5px;">
-                    <input type="tel" placeholder="Your Phone" style="padding: 1rem; border: 1px solid #ddd; border-radius: 5px;">
-                    <textarea placeholder="Your Message" rows="5" style="padding: 1rem; border: 1px solid #ddd; border-radius: 5px; resize: vertical;"></textarea>
-                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Lawson & Associates</h3>
-                <p>Providing exceptional legal services with integrity and dedication for over 25 years.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Practice Areas</h3>
-                <a href="#">Corporate Law</a>
-                <a href="#">Civil Litigation</a>
-                <a href="#">Real Estate Law</a>
-                <a href="#">Family Law</a>
-                <a href="#">Estate Planning</a>
-                <a href="#">Employment Law</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <a href="#">123 Legal Street, Suite 100</a>
-                <a href="#">New York, NY 10001</a>
-                <a href="#">(555) 123-4567</a>
-                <a href="#">info@lawsonassociates.com</a>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                    <a href="#" style="font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Lawson & Associates. All rights reserved.</p>
-        </div>
-    </div>
+<footer>
+    <p>&copy; 2025 TT Kgomokaboya Inc Attorneys. All rights reserved.</p>
 </footer>
 
 <script>
